@@ -20,3 +20,11 @@ The GUI Client for alice-tools.
 不过作为强迫症，我完整的做好了 [alice-tools](https://github.com/nunuhara/alice-tools) 的C#封装，如果有烈士想要接手，可以直接拿来用。
 
 具体的说明可以参考 [此文档](https://github.com/differentrain/AliceToolsProxies/blob/master/docs/AliceToolsProxies/AliceToolsProxy.md)。
+
+## 注意事项
+
+使用 [alice-tools](https://github.com/nunuhara/alice-tools)，编码很重要。
+
+遇到问题，90%都是输入/输出的编码选择不对，多切换试试就好了。
+
+另外 [alice-tools](https://github.com/nunuhara/alice-tools) 目前对于中文路径的支持很差，最好使用英文路径。
