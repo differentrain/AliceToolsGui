@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BD011CF-ED65-4DD7-98C6-129F07F580E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AliceToolsGui</RootNamespace>
+    <AssemblyName>AliceToolsGui</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Fav.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AliceToolsProxies\Abstracts\AliceArFileOperation.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\AliceExFileOperation.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\AliceAcxFileOperation.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\AliceAinFileOperation.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\AliceFileOperation.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\AliceToolsOutputConverter.cs" />
+    <Compile Include="AliceToolsProxies\Abstracts\IAliceToolsOperation.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceArchiveItem.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceArchiveItemConverter.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsAinDumpOption.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsAinSourceType.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsArExtractOptions.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsEnumArgumentAttribute.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsAinDump.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsAinEdit.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsArExtract.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsArPack.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsArList.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsExBuild.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsAinCompare.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsExDump.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsExCompare.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsAcxBuild.cs" />
+    <Compile Include="AliceToolsProxies\Operations\AliceToolsAcxDump.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsArgumentsWriter.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\OutputConvertionResult.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsOutput.cs" />
+    <Compile Include="AliceToolsProxies\AliceToolsProxy.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsProxiesExtensions.cs" />
+    <Compile Include="AliceToolsProxies\InternalMembers\VersionReaderInner.cs" />
+    <Compile Include="AliceToolsProxies\InternalMembers\GetVersionOperationInner.cs" />
+    <Compile Include="AliceToolsProxies\InternalMembers\UtilitiesInner.cs" />
+    <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsState.cs" />
+    <Compile Include="CustomControls\EncodingPanle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\EncodingPanle.Designer.cs">
+      <DependentUpon>EncodingPanle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PathBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\PathBox.Designer.cs">
+      <DependentUpon>PathBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.ProcessAcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.ProcessAin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.ProcessAr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.ProcessEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.ProcessUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GithubRepoReleases\AliceToolsGuiRelease.cs" />
+    <Compile Include="GithubRepoReleases\AliceToolsRelease.cs" />
+    <Compile Include="GithubRepoReleases\GithubReleaseClient.cs" />
+    <Compile Include="GithubRepoReleases\GitHubRepoRelease.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomControls\EncodingPanle.resx">
+      <DependentUpon>EncodingPanle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\PathBox.resx">
+      <DependentUpon>PathBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include=".editorconfig" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fav.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
