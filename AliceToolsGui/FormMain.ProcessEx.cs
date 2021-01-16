@@ -8,7 +8,7 @@ namespace AliceToolsGui
 {
     partial class FormMain
     {
-        private void PathBoxEx_PathChanged(object sender, string e)
+        private void PathBoxExPathChangedCore()
         {
             if (string.IsNullOrWhiteSpace(PathBoxEx.Path))
             {
@@ -18,7 +18,7 @@ namespace AliceToolsGui
             ButtonExDump.Enabled = true;
         }
 
-        private void PathExSource_PathChanged(object sender, string e)
+        private void PathExSourcePathChangedCore()
         {
             if (string.IsNullOrWhiteSpace(PathExSource.Path))
             {

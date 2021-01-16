@@ -114,7 +114,7 @@ namespace AliceToolsGui
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 25);
+            this.label1.Location = new System.Drawing.Point(8, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
@@ -123,7 +123,7 @@ namespace AliceToolsGui
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 52);
+            this.label2.Location = new System.Drawing.Point(8, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -139,7 +139,7 @@ namespace AliceToolsGui
             this.GroupBoxEncoding.Controls.Add(this.label1);
             this.GroupBoxEncoding.Location = new System.Drawing.Point(9, 8);
             this.GroupBoxEncoding.Name = "GroupBoxEncoding";
-            this.GroupBoxEncoding.Size = new System.Drawing.Size(226, 75);
+            this.GroupBoxEncoding.Size = new System.Drawing.Size(374, 75);
             this.GroupBoxEncoding.TabIndex = 4;
             this.GroupBoxEncoding.TabStop = false;
             this.GroupBoxEncoding.Text = "编码";
@@ -147,18 +147,18 @@ namespace AliceToolsGui
             // EncodingPanleInput
             // 
             this.EncodingPanleInput.AutoSize = true;
-            this.EncodingPanleInput.Location = new System.Drawing.Point(50, 20);
+            this.EncodingPanleInput.Location = new System.Drawing.Point(49, 16);
             this.EncodingPanleInput.Name = "EncodingPanleInput";
-            this.EncodingPanleInput.Size = new System.Drawing.Size(166, 22);
+            this.EncodingPanleInput.Size = new System.Drawing.Size(319, 28);
             this.EncodingPanleInput.TabIndex = 2;
             this.EncodingPanleInput.EncodingChanged += new System.EventHandler<System.Text.Encoding>(this.EncodingPanleInput_EncodingChanged);
             // 
             // EncodingPanleOutput
             // 
             this.EncodingPanleOutput.AutoSize = true;
-            this.EncodingPanleOutput.Location = new System.Drawing.Point(50, 48);
+            this.EncodingPanleOutput.Location = new System.Drawing.Point(49, 43);
             this.EncodingPanleOutput.Name = "EncodingPanleOutput";
-            this.EncodingPanleOutput.Size = new System.Drawing.Size(166, 22);
+            this.EncodingPanleOutput.Size = new System.Drawing.Size(319, 28);
             this.EncodingPanleOutput.TabIndex = 3;
             this.EncodingPanleOutput.EncodingChanged += new System.EventHandler<System.Text.Encoding>(this.EncodingPanleOutput_EncodingChanged);
             // 
@@ -175,7 +175,7 @@ namespace AliceToolsGui
             this.TextBoxOutput.Name = "TextBoxOutput";
             this.TextBoxOutput.ReadOnly = true;
             this.TextBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBoxOutput.Size = new System.Drawing.Size(479, 143);
+            this.TextBoxOutput.Size = new System.Drawing.Size(627, 143);
             this.TextBoxOutput.TabIndex = 5;
             this.TextBoxOutput.TextChanged += new System.EventHandler(this.TextBoxOutput_TextChanged);
             // 
@@ -214,7 +214,7 @@ namespace AliceToolsGui
             this.GroupBoxAinPath.Controls.Add(this.PathBoxInputAin);
             this.GroupBoxAinPath.Location = new System.Drawing.Point(6, 6);
             this.GroupBoxAinPath.Name = "GroupBoxAinPath";
-            this.GroupBoxAinPath.Size = new System.Drawing.Size(463, 55);
+            this.GroupBoxAinPath.Size = new System.Drawing.Size(611, 55);
             this.GroupBoxAinPath.TabIndex = 6;
             this.GroupBoxAinPath.TabStop = false;
             this.GroupBoxAinPath.Text = "目标ain文件路径";
@@ -227,7 +227,7 @@ namespace AliceToolsGui
             this.PathBoxInputAin.Filter = "Ain文件 (*.ain)|*.ain";
             this.PathBoxInputAin.Location = new System.Drawing.Point(6, 20);
             this.PathBoxInputAin.Name = "PathBoxInputAin";
-            this.PathBoxInputAin.Size = new System.Drawing.Size(451, 21);
+            this.PathBoxInputAin.Size = new System.Drawing.Size(599, 21);
             this.PathBoxInputAin.TabIndex = 1;
             this.PathBoxInputAin.PathChanged += new System.EventHandler<string>(this.PathBoxInputAin_PathChanged);
             // 
@@ -243,7 +243,7 @@ namespace AliceToolsGui
             this.TabControlMain.Location = new System.Drawing.Point(9, 91);
             this.TabControlMain.Name = "TabControlMain";
             this.TabControlMain.SelectedIndex = 0;
-            this.TabControlMain.Size = new System.Drawing.Size(483, 300);
+            this.TabControlMain.Size = new System.Drawing.Size(631, 300);
             this.TabControlMain.TabIndex = 7;
             // 
             // TabPageAin
@@ -254,7 +254,7 @@ namespace AliceToolsGui
             this.TabPageAin.Location = new System.Drawing.Point(4, 22);
             this.TabPageAin.Name = "TabPageAin";
             this.TabPageAin.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageAin.Size = new System.Drawing.Size(475, 274);
+            this.TabPageAin.Size = new System.Drawing.Size(623, 274);
             this.TabPageAin.TabIndex = 0;
             this.TabPageAin.Text = "ain文件";
             this.TabPageAin.UseVisualStyleBackColor = true;
@@ -271,7 +271,7 @@ namespace AliceToolsGui
             this.groupBox1.Controls.Add(this.RadioButtonAinUpdateCode);
             this.groupBox1.Location = new System.Drawing.Point(6, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 99);
+            this.groupBox1.Size = new System.Drawing.Size(611, 99);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "修改";
@@ -295,7 +295,7 @@ namespace AliceToolsGui
             this.PathBoxAinSource.Filter = "Ain文件源码 (*.jam)|*.jam|JSON文件 (*.json)|*.json|文本文件 (*.txt)|*.txt|所有文件 (*.*)|*.*";
             this.PathBoxAinSource.Location = new System.Drawing.Point(6, 22);
             this.PathBoxAinSource.Name = "PathBoxAinSource";
-            this.PathBoxAinSource.Size = new System.Drawing.Size(451, 21);
+            this.PathBoxAinSource.Size = new System.Drawing.Size(599, 21);
             this.PathBoxAinSource.TabIndex = 5;
             this.PathBoxAinSource.PathChanged += new System.EventHandler<string>(this.PathBoxAinSource_PathChanged);
             // 
@@ -303,7 +303,7 @@ namespace AliceToolsGui
             // 
             this.ButtonAinEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAinEdit.Enabled = false;
-            this.ButtonAinEdit.Location = new System.Drawing.Point(380, 53);
+            this.ButtonAinEdit.Location = new System.Drawing.Point(528, 53);
             this.ButtonAinEdit.Name = "ButtonAinEdit";
             this.ButtonAinEdit.Size = new System.Drawing.Size(77, 23);
             this.ButtonAinEdit.TabIndex = 4;
@@ -356,7 +356,7 @@ namespace AliceToolsGui
             this.GroupBoxAinDump.Controls.Add(this.RadioButtonAinCode);
             this.GroupBoxAinDump.Location = new System.Drawing.Point(6, 67);
             this.GroupBoxAinDump.Name = "GroupBoxAinDump";
-            this.GroupBoxAinDump.Size = new System.Drawing.Size(463, 50);
+            this.GroupBoxAinDump.Size = new System.Drawing.Size(611, 50);
             this.GroupBoxAinDump.TabIndex = 7;
             this.GroupBoxAinDump.TabStop = false;
             this.GroupBoxAinDump.Text = "提取";
@@ -365,7 +365,7 @@ namespace AliceToolsGui
             // 
             this.ButtonAinDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAinDump.Enabled = false;
-            this.ButtonAinDump.Location = new System.Drawing.Point(380, 17);
+            this.ButtonAinDump.Location = new System.Drawing.Point(528, 17);
             this.ButtonAinDump.Name = "ButtonAinDump";
             this.ButtonAinDump.Size = new System.Drawing.Size(77, 23);
             this.ButtonAinDump.TabIndex = 4;
@@ -411,7 +411,7 @@ namespace AliceToolsGui
             this.TabPageEx.Controls.Add(this.groupBox5);
             this.TabPageEx.Location = new System.Drawing.Point(4, 22);
             this.TabPageEx.Name = "TabPageEx";
-            this.TabPageEx.Size = new System.Drawing.Size(475, 274);
+            this.TabPageEx.Size = new System.Drawing.Size(623, 274);
             this.TabPageEx.TabIndex = 2;
             this.TabPageEx.Text = "ex文件";
             this.TabPageEx.UseVisualStyleBackColor = true;
@@ -526,7 +526,7 @@ namespace AliceToolsGui
             this.TabPageAr.Controls.Add(this.ListBoxArItems);
             this.TabPageAr.Location = new System.Drawing.Point(4, 22);
             this.TabPageAr.Name = "TabPageAr";
-            this.TabPageAr.Size = new System.Drawing.Size(475, 274);
+            this.TabPageAr.Size = new System.Drawing.Size(623, 274);
             this.TabPageAr.TabIndex = 3;
             this.TabPageAr.Text = "afa/ald文件";
             this.TabPageAr.UseVisualStyleBackColor = true;
@@ -639,7 +639,7 @@ namespace AliceToolsGui
             this.TabPageAcx.Location = new System.Drawing.Point(4, 22);
             this.TabPageAcx.Name = "TabPageAcx";
             this.TabPageAcx.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPageAcx.Size = new System.Drawing.Size(475, 274);
+            this.TabPageAcx.Size = new System.Drawing.Size(623, 274);
             this.TabPageAcx.TabIndex = 1;
             this.TabPageAcx.Text = "acx文件";
             this.TabPageAcx.UseVisualStyleBackColor = true;
@@ -726,7 +726,7 @@ namespace AliceToolsGui
             this.GroupBoxUpdate.Controls.Add(this.ButtonCheckATG);
             this.GroupBoxUpdate.Controls.Add(this.LabelATVersion);
             this.GroupBoxUpdate.Controls.Add(this.LabelATGVersion);
-            this.GroupBoxUpdate.Location = new System.Drawing.Point(241, 8);
+            this.GroupBoxUpdate.Location = new System.Drawing.Point(389, 8);
             this.GroupBoxUpdate.Name = "GroupBoxUpdate";
             this.GroupBoxUpdate.Size = new System.Drawing.Size(251, 75);
             this.GroupBoxUpdate.TabIndex = 8;
@@ -812,14 +812,14 @@ namespace AliceToolsGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 548);
+            this.ClientSize = new System.Drawing.Size(647, 548);
             this.Controls.Add(this.ButtonShutdown);
             this.Controls.Add(this.GroupBoxUpdate);
             this.Controls.Add(this.TabControlMain);
             this.Controls.Add(this.TextBoxOutput);
             this.Controls.Add(this.GroupBoxEncoding);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(515, 587);
+            this.MinimumSize = new System.Drawing.Size(663, 587);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AliceToolsGui";

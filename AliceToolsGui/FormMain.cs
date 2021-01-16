@@ -168,6 +168,26 @@ namespace AliceToolsGui
             PathBoxArPathChangedCore();
         }
 
+        private void PathBoxAinSource_PathChanged(object sender, string e)
+        {
+            PathBoxAinSourcePathChangedCore();
+        }
+
+        private void PathBoxInputAin_PathChanged(object sender, string e)
+        {
+            PathBoxInputAinPathChangedCore();
+        }
+
+        private void PathExSource_PathChanged(object sender, string e)
+        {
+            PathExSourcePathChangedCore();
+        }
+
+        private void PathBoxEx_PathChanged(object sender, string e)
+        {
+            PathBoxExPathChangedCore();
+        }
+
         #endregion
 
 

@@ -35,12 +35,14 @@ namespace AliceToolsGui.CustomControls
             this.RadioButtonCHS = new System.Windows.Forms.RadioButton();
             this.RadioButtonJP = new System.Windows.Forms.RadioButton();
             this.RadioButtonUTF8 = new System.Windows.Forms.RadioButton();
+            this.RadioButtonCustom = new System.Windows.Forms.RadioButton();
+            this.ComboBoxCustom = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // RadioButtonCHS
             // 
             this.RadioButtonCHS.AutoSize = true;
-            this.RadioButtonCHS.Location = new System.Drawing.Point(56, 3);
+            this.RadioButtonCHS.Location = new System.Drawing.Point(56, 5);
             this.RadioButtonCHS.Name = "RadioButtonCHS";
             this.RadioButtonCHS.Size = new System.Drawing.Size(47, 16);
             this.RadioButtonCHS.TabIndex = 0;
@@ -52,7 +54,7 @@ namespace AliceToolsGui.CustomControls
             // RadioButtonJP
             // 
             this.RadioButtonJP.AutoSize = true;
-            this.RadioButtonJP.Location = new System.Drawing.Point(3, 3);
+            this.RadioButtonJP.Location = new System.Drawing.Point(3, 5);
             this.RadioButtonJP.Name = "RadioButtonJP";
             this.RadioButtonJP.Size = new System.Drawing.Size(47, 16);
             this.RadioButtonJP.TabIndex = 2;
@@ -64,7 +66,7 @@ namespace AliceToolsGui.CustomControls
             // RadioButtonUTF8
             // 
             this.RadioButtonUTF8.AutoSize = true;
-            this.RadioButtonUTF8.Location = new System.Drawing.Point(109, 3);
+            this.RadioButtonUTF8.Location = new System.Drawing.Point(109, 5);
             this.RadioButtonUTF8.Name = "RadioButtonUTF8";
             this.RadioButtonUTF8.Size = new System.Drawing.Size(53, 16);
             this.RadioButtonUTF8.TabIndex = 3;
@@ -73,16 +75,40 @@ namespace AliceToolsGui.CustomControls
             this.RadioButtonUTF8.UseVisualStyleBackColor = true;
             this.RadioButtonUTF8.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
+            // RadioButtonCustom
+            // 
+            this.RadioButtonCustom.AutoSize = true;
+            this.RadioButtonCustom.Location = new System.Drawing.Point(168, 7);
+            this.RadioButtonCustom.Name = "RadioButtonCustom";
+            this.RadioButtonCustom.Size = new System.Drawing.Size(14, 13);
+            this.RadioButtonCustom.TabIndex = 4;
+            this.RadioButtonCustom.TabStop = true;
+            this.RadioButtonCustom.UseVisualStyleBackColor = true;
+            this.RadioButtonCustom.CheckedChanged += new System.EventHandler(this.RadioButtonCustom_CheckedChanged);
+            // 
+            // ComboBoxCustom
+            // 
+            this.ComboBoxCustom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxCustom.Enabled = false;
+            this.ComboBoxCustom.FormattingEnabled = true;
+            this.ComboBoxCustom.Location = new System.Drawing.Point(188, 3);
+            this.ComboBoxCustom.Name = "ComboBoxCustom";
+            this.ComboBoxCustom.Size = new System.Drawing.Size(128, 20);
+            this.ComboBoxCustom.TabIndex = 5;
+            this.ComboBoxCustom.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCustom_SelectedIndexChanged);
+            // 
             // EncodingPanle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.ComboBoxCustom);
+            this.Controls.Add(this.RadioButtonCustom);
             this.Controls.Add(this.RadioButtonUTF8);
             this.Controls.Add(this.RadioButtonJP);
             this.Controls.Add(this.RadioButtonCHS);
             this.Name = "EncodingPanle";
-            this.Size = new System.Drawing.Size(165, 22);
+            this.Size = new System.Drawing.Size(319, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +119,7 @@ namespace AliceToolsGui.CustomControls
         private System.Windows.Forms.RadioButton RadioButtonCHS;
         private System.Windows.Forms.RadioButton RadioButtonJP;
         private System.Windows.Forms.RadioButton RadioButtonUTF8;
+        private System.Windows.Forms.RadioButton RadioButtonCustom;
+        private System.Windows.Forms.ComboBox ComboBoxCustom;
     }
 }

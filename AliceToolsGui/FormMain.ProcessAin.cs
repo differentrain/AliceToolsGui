@@ -10,7 +10,7 @@ namespace AliceToolsGui
 {
     partial class FormMain
     {
-        private void PathBoxInputAin_PathChanged(object sender, string e)
+        private void PathBoxInputAinPathChangedCore()
         {
             if (string.IsNullOrWhiteSpace(PathBoxInputAin.Path))
             {
@@ -21,7 +21,7 @@ namespace AliceToolsGui
             ButtonAinEdit.Enabled = !string.IsNullOrWhiteSpace(PathBoxAinSource.Path);
         }
 
-        private void PathBoxAinSource_PathChanged(object sender, string e)
+        private void PathBoxAinSourcePathChangedCore()
         {
             if (string.IsNullOrWhiteSpace(PathBoxAinSource.Path))
             {

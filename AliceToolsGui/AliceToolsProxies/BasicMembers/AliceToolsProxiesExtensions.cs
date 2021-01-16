@@ -97,6 +97,13 @@ namespace AliceToolsGui.AliceToolsProxies
         public static bool IsLibiconvSupported(this Encoding encoding) => s_pageCodeNameMap.ContainsKey(encoding.CodePage);
 
         /// <summary>
+        /// Gets a value shows if this <see cref="EncodingInfo"/> has libiconv friendly name.
+        /// </summary>
+        /// <param name="encoding">encoding.</param>
+        /// <returns><c>true</c> if this <see cref="EncodingInfo"/> has libiconv friendly name, otherwise, <c>false</c>.</returns>
+        public static bool IsLibiconvSupported(this EncodingInfo encoding) => s_pageCodeNameMap.ContainsKey(encoding.CodePage);
+
+        /// <summary>
         /// Gets libiconv friendly name.
         /// </summary>
         /// <param name="encoding">encoding.</param>
@@ -108,11 +115,31 @@ namespace AliceToolsGui.AliceToolsProxies
              throw new ArgumentException("encoding does not have libiconv friendly name.");
 
         /// <summary>
+        /// Gets libiconv friendly name.
+        /// </summary>
+        /// <param name="encodingInfo">encoding.</param>
+        /// <returns>The libiconv friendly name.</returns>
+        /// <exception cref="ArgumentException"><paramref name="encodingInfo"/>does not have libiconv friendly name.</exception>
+        public static string GetLibiconvFriendlyName(this EncodingInfo encodingInfo) =>
+             s_pageCodeNameMap.TryGetValue(encodingInfo.CodePage, out string name) ?
+                name :
+             throw new ArgumentException("encodingInfo does not have libiconv friendly name.");
+
+        /// <summary>
         /// Try get libiconv friendly name.
         /// </summary>
         /// <param name="encoding">encoding.</param>
         /// <param name="name">If succeed, returns the libiconv friendly name.</param>
         /// <returns><c>true</c> if succeed, otherwise, <c>false</c>.</returns>
         public static bool TryGetLibiconvFriendlyName(this Encoding encoding, out string name) => s_pageCodeNameMap.TryGetValue(encoding.CodePage, out name);
+
+        /// <summary>
+        /// Try get libiconv friendly name.
+        /// </summary>
+        /// <param name="encodingInfo">encoding.</param>
+        /// <param name="name">If succeed, returns the libiconv friendly name.</param>
+        /// <returns><c>true</c> if succeed, otherwise, <c>false</c>.</returns>
+        public static bool TryGetLibiconvFriendlyName(this EncodingInfo encodingInfo, out string name) => s_pageCodeNameMap.TryGetValue(encodingInfo.CodePage, out name);
+
     }
 }
