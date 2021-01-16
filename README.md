@@ -3,7 +3,7 @@ The GUI Client for alice-tools.
 
 用于 [alice-tools](https://github.com/nunuhara/alice-tools) 的 GUI 客户端。
 
-最新版：[1.0.3](https://github.com/differentrain/AliceToolsGui/releases/download/1.0.3/AliceToolsGui1.0.3.zip)
+最新版：[1.0.4](https://github.com/differentrain/AliceToolsGui/releases/download/1.0.4/AliceToolsGui1.0.4.zip)
 
 **注：1.0.2之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
 
@@ -13,7 +13,7 @@ The GUI Client for alice-tools.
 
 也可以如下图所示，放在文件夹中直接点击“更新”，此客户端将自行下载最新版本的 [alice-tools](https://github.com/nunuhara/alice-tools)。
 
-![截图](https://raw.githubusercontent.com/differentrain/AliceToolsGui/main/Resources/1.png)
+![ScreenShot](https://raw.githubusercontent.com/differentrain/AliceToolsGui/main/Resources/ScreenShot.png)
 
 [alice-tools](https://github.com/nunuhara/alice-tools) 提供的功能和选项很多，但我实在懒得写GUI，所以这里酌情的尽情了删减。
 
