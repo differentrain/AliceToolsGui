@@ -5,7 +5,7 @@ The GUI Client for alice-tools.
 
 最新版：[1.0.4](https://github.com/differentrain/AliceToolsGui/releases/download/1.0.4/AliceToolsGui1.0.4.zip)
 
-**注：1.0.2之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
+**注：`1.0.2` 之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
 
 ## 使用说明
 
@@ -17,7 +17,7 @@ The GUI Client for alice-tools.
 
 [alice-tools](https://github.com/nunuhara/alice-tools) 提供的功能和选项很多，但我实在懒得写GUI，所以这里酌情的尽情了删减。
 
-目前仅支持 `Ain`, `Ex`, 'Acx', 'Afa', 'Ald'的基本操作，比如提取和打包是都加上了，只是选项有限。
+目前仅支持 `Ain`, `Ex`, `Acx`, `Afa`, `Ald`的基本操作，比如提取和打包是都加上了，只是选项有限。
 
 不过作为强迫症，我完整的做好了 [alice-tools](https://github.com/nunuhara/alice-tools) 的C#封装，如果有烈士想要接手，可以直接拿来用。
 
