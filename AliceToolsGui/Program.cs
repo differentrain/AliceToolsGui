@@ -22,10 +22,15 @@ namespace AliceToolsGui
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length == 3)
             {
+                Thread.Sleep(1000);
                 if (args[1] == "update")
                 {
                     File.Copy(args[0], args[2], true);
-                    Process.Start(args[2], $"delete \"{args[0]}\"");
+                    var si = new ProcessStartInfo(args[2], $"delete \"{args[0]}\"")
+                    {
+                        UseShellExecute = false
+                    };
+                    Process.Start(si).Dispose();
                     Environment.Exit(0);
                 }
                 else if (args[1] == "delete")
@@ -47,8 +52,6 @@ namespace AliceToolsGui
                     Environment.Exit(0);
                 }
             }
-
-
         }
     }
 }

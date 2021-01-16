@@ -132,20 +132,24 @@ namespace AliceToolsGui
         {
             try
             {
-                IEnumerable<FileInfo> fis = await GetUpdateTempFilesAsync(_atGClient, s_myVersion).ConfigureAwait(false);
+                IEnumerable<FileInfo> fis = await GetUpdateTempFilesAsync(_atGClient, MyVersion).ConfigureAwait(false);
                 if (fis == null)
                 {
                     return;
                 }
 
-                Invoke(() => TextBoxOutput.Text += "为完成更新，程序将在5秒钟后重启...\r\n");
+                Invoke(() => TextBoxOutput.Text += "为完成更新，程序将在3秒钟后重启...\r\n");
 
-                await Task.Delay(5000).ConfigureAwait(false);
+                await Task.Delay(3000).ConfigureAwait(false);
 
                 FileInfo fi = fis.First(f => f.Extension.ToLower().Equals(".exe"));
-                Process.Start(fi.FullName, $"update \"{fi.FullName}\"");
-                Environment.Exit(0);
 
+                var si = new ProcessStartInfo(Environment.GetCommandLineArgs()[0], $"update \"{Environment.GetCommandLineArgs()[0]}\"")
+                {
+                    UseShellExecute = false
+                };
+                Process.Start(si).Dispose();
+                Environment.Exit(0);
             }
 #pragma warning disable CA1031 // Do not catch general exception types
             catch

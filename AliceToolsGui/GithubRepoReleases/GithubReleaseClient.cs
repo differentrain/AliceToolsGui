@@ -28,7 +28,7 @@ namespace AliceToolsGui.GithubRepoReleases
         static GithubReleaseClient()
         {
             s_client.Timeout = TimeSpan.FromSeconds(120);
-            s_client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("AliceToolsGUI", "1.0.0"));
+            s_client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("AliceToolsGUI", FormMain.MyVersion.ToString(3)));
             // ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }

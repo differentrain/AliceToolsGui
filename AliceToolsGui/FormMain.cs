@@ -17,7 +17,7 @@ namespace AliceToolsGui
 {
     public partial class FormMain : Form
     {
-        private static readonly Version s_myVersion = Assembly.GetExecutingAssembly().GetName().Version;
+        public static readonly Version MyVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
         private AliceToolsProxy _proxy;
 
@@ -46,7 +46,7 @@ namespace AliceToolsGui
             EncodingPanleOutput.SetUTF8();
             LinkLabelAT.Links.Add(0, LinkLabelAT.Text.Length, @"https://haniwa.technology/alice-tools/");
             LinkLabelATG.Links.Add(0, LinkLabelATG.Text.Length, @"https://github.com/differentrain/AliceToolsGui");
-            LabelATGVersion.Text = s_myVersion.ToString(3);
+            LabelATGVersion.Text = MyVersion.ToString(3);
             try
             {
                 _proxy = new AliceToolsProxy();
@@ -152,7 +152,7 @@ namespace AliceToolsGui
 
         private void LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(e.Link.LinkData as string);
+            Process.Start(e.Link.LinkData as string).Dispose();
         }
 
 
