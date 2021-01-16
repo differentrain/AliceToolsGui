@@ -2,9 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -214,10 +212,10 @@ namespace AliceToolsGui.GithubRepoReleases
                     }
                     using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Write, FileShare.Write))
                     {
-                        using (Stream stream = await respone.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                        using (var copyer = new StreamCopyerInner(await respone.Content.ReadAsStreamAsync().ConfigureAwait(false)))
                         {
                             fs.Position = from.Value;
-                            await stream.CopyToAsync(fs).ConfigureAwait(false);
+                            await copyer.CopyToAsync(fs, _cancellationTokenSouce.Token).ConfigureAwait(false);
                             return true;
                         }
                     }

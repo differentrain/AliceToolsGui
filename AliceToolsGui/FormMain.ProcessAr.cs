@@ -3,8 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using AliceToolsGui.AliceToolsProxies;
@@ -55,7 +53,7 @@ namespace AliceToolsGui
                 {
                     _arExtract.Options |= AliceToolsArExtractOptions.Raw;
                 }
- 
+
                 _arExtract.OutputPath = FolderBrowserDialogMain.SelectedPath;
                 ButtonShutdown.Visible = true;
                 ProcessAliceFile(_arExtract);
@@ -132,7 +130,7 @@ namespace AliceToolsGui
                 }
             }
 #pragma warning disable CA1031 // Do not catch general exception types
-            catch 
+            catch
             {
                 Invoke(() => TextBoxOutput.Text += "错误：发生了内部错误。\r\n");
             }

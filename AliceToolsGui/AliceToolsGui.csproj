@@ -124,6 +124,7 @@
     <Compile Include="GithubRepoReleases\AliceToolsRelease.cs" />
     <Compile Include="GithubRepoReleases\GithubReleaseClient.cs" />
     <Compile Include="GithubRepoReleases\GitHubRepoRelease.cs" />
+    <Compile Include="GithubRepoReleases\StreamCopyerInner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomControls\EncodingPanle.resx">

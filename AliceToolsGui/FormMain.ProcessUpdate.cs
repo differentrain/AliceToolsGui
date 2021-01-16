@@ -7,7 +7,6 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using AliceToolsGui.AliceToolsProxies;
@@ -89,7 +88,7 @@ namespace AliceToolsGui
                     Invoke(() =>
                     {
                         LabelATVersion.Text = _proxy.Version.ToString(3);
-                        TextBoxOutput.Text += $"下载完成，alice-tools 版本：{LabelATVersion.Text}\r\n";
+                        TextBoxOutput.Text += $"初始化完成，alice-tools 版本：{LabelATVersion.Text}\r\n";
                         ContextMenuStripOutput.Enabled = true;
                     });
                     return;

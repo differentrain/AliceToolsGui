@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,11 +46,11 @@ namespace AliceToolsGui
             EncodingPanleOutput.SetUTF8();
             LinkLabelAT.Links.Add(0, LinkLabelAT.Text.Length, @"https://haniwa.technology/alice-tools/");
             LinkLabelATG.Links.Add(0, LinkLabelATG.Text.Length, @"https://github.com/differentrain/AliceToolsGui");
+            LabelATGVersion.Text = s_myVersion.ToString(3);
             try
             {
                 _proxy = new AliceToolsProxy();
                 LabelATVersion.Text = _proxy.Version.ToString(3);
-                LabelATGVersion.Text = s_myVersion.ToString(3);
             }
 #pragma warning disable CA1031 // Do not catch general exception types
             catch
@@ -129,11 +128,11 @@ namespace AliceToolsGui
                 ButtonCheckAT.Text = ButtonCheckATG.Text = "更新";
                 ButtonShutdown.Visible = false;
                 TextBoxOutput.Text += "******************\r\n";
-
+                ButtonCheckAT.Enabled = true;
+                ButtonCheckATG.Enabled = true;
+                ClearTemp();
                 if (ContextMenuStripOutput.Enabled == true)
                 {
-                    ButtonCheckAT.Enabled = true;
-                    ButtonCheckATG.Enabled = true;
                     GroupBoxEncoding.Enabled = true;
                     TabControlMain.Enabled = true;
                     GroupBoxUpdate.Enabled = true;
@@ -244,6 +243,6 @@ namespace AliceToolsGui
             _proxy.Shutdown();
         }
 
-       
+
     }
 }
