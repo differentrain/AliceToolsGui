@@ -61,6 +61,7 @@ namespace AliceToolsGui
         private void RadioButtonAinUpdateCode_CheckedChanged(object sender, EventArgs e)
         {
             if (!(RadioButtonAinUpdateCode.Tag is string tag && "set".Equals(tag))
+                && !string.IsNullOrWhiteSpace(PathBoxAinSource.Extension)
                 && (PathBoxAinSource.Extension.Equals(".txt") || PathBoxAinSource.Extension.Equals(".json")))
             {
                 PathBoxAinSource.SetDefault();
@@ -88,7 +89,7 @@ namespace AliceToolsGui
 
         private void RadioButtonAinAppendCode_CheckedChanged(object sender, EventArgs e)
         {
-            if (PathBoxAinSource.Extension.Equals(".txt") || PathBoxAinSource.Extension.Equals(".json"))
+            if (!string.IsNullOrWhiteSpace(PathBoxAinSource.Extension) && (PathBoxAinSource.Extension.Equals(".txt") || PathBoxAinSource.Extension.Equals(".json")))
             {
                 PathBoxAinSource.SetDefault();
                 ButtonAinEdit.Enabled = false;
