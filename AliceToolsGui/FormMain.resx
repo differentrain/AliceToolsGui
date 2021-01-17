@@ -120,6 +120,55 @@
   <metadata name="ContextMenuStripOutput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>513, 17</value>
   </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>【概述】
+
+此功能将记录打包文件的清单文件打包为Alice游戏档案。
+
+目前alice-tools仅支持打包为2版的afa文件。
+
+【基础清单文件格式】
+
+#ALICEPACK
+打包后的afa文件名.afa
+要打包的文件1.qnt
+要打包的文件2.qnt
+...
+
+说明：
+
+“#ALICEPACK” 是清单类型的标识，不要去掉或改变。
+
+实际执行中，alice-tools会将清单中所有 “要打包的文件” 打包为 “打包后的afa文件名.afa”。
+
+
+【CG档案清单文件格式】
+
+#ALICECG2
+打包后的afa文件名.afa
+file_number_1, src_directory_1, src_format_1, dst_directory_1, dst_format_1
+file_number_2, src_directory_2, src_format_2, dst_directory_2, dst_format_2
+...
+
+说明：
+
+“#ALICECG2” 是清单类型的标识，不要去掉或改变。
+
+file_number 文件编号，仅对ald文件有效，目前alice-tools需要此字段但会忽略。
+src_directory 包含源CG图片文件的文件夹路径。
+src_format 源CG图片文件的格式类型。
+dst_directory 用来存储转换后的CG图片的文件夹路径。
+dst_format 转换后的CG图片格式。
+
+实际执行中，alice-tools会先将 src_directory 文件夹中所有 src_format 格式的图片文件转换为 dst_format 格式，并存储到 dst_directory 文件夹中，然后打包成 “打包后的afa文件名.afa”。
+
+例子：
+
+#ALICECG2
+output_filename.afa
+0,源图片文件夹路径,PNG,转换后的图片文件夹路径,QNT
+...</value>
+  </data>
   <metadata name="FolderBrowserDialogMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>52, 19</value>
   </metadata>

@@ -30,6 +30,7 @@ namespace AliceToolsGui
 
         private readonly AliceToolsArExtract _arExtract = new AliceToolsArExtract();
         private readonly AliceToolsArList _arList = new AliceToolsArList();
+        private readonly AliceToolsArPack _arPack = new AliceToolsArPack();
 
         private readonly AliceToolsExDump _exDump = new AliceToolsExDump();
         private readonly AliceToolsExBuild _exBuild = new AliceToolsExBuild();
@@ -72,6 +73,7 @@ namespace AliceToolsGui
             _arList.InputEncoding = e;
             _exDump.InputEncoding = e;
             _exBuild.InputEncoding = e;
+            _arPack.InputEncoding = e;
         }
 
         private void EncodingPanleOutput_EncodingChanged(object sender, Encoding e)
@@ -84,6 +86,7 @@ namespace AliceToolsGui
             _arList.OutputEncoding = e;
             _exDump.OutputEncoding = e;
             _exBuild.OutputEncoding = e;
+            _arPack.OutputEncoding = e;
         }
 
         private void ToolStripMenuItemClear_Click(object sender, EventArgs e)
@@ -186,6 +189,11 @@ namespace AliceToolsGui
         private void PathBoxEx_PathChanged(object sender, string e)
         {
             PathBoxExPathChangedCore();
+        }
+
+        private void PathBoxArPack_PathChanged(object sender, string e)
+        {
+            PathBoxArPackPathChangedCore();
         }
 
         #endregion

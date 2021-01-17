@@ -23,6 +23,20 @@ namespace AliceToolsGui
             ButtonArExtractAll.Enabled = ButtonArList.Enabled = true;
         }
 
+
+        private void PathBoxArPackPathChangedCore()
+        {
+            ButtonArPack.Enabled= !string.IsNullOrWhiteSpace(PathBoxArPack.Path);
+        }
+
+        private void ButtonArPack_Click(object sender, EventArgs e)
+        {
+            TextBoxOutput.Text += $"准备打包清单...\r\n";
+            _arPack.InputPath = PathBoxArPack.Path;
+            ButtonShutdown.Visible = true;
+            ProcessAliceFile(_arPack);
+        }
+
         private void ListBoxArItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ListBoxArItems.SelectedIndex >= 0)

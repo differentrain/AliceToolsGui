@@ -76,6 +76,10 @@ namespace AliceToolsGui
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.PathBoxAr = new AliceToolsGui.CustomControls.PathBox();
             this.ListBoxArItems = new System.Windows.Forms.ListBox();
+            this.TabPageArPack = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ButtonArPack = new System.Windows.Forms.Button();
+            this.PathBoxArPack = new AliceToolsGui.CustomControls.PathBox();
             this.TabPageAcx = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -106,6 +110,7 @@ namespace AliceToolsGui
             this.groupBox5.SuspendLayout();
             this.TabPageAr.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.TabPageArPack.SuspendLayout();
             this.TabPageAcx.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.GroupBoxUpdate.SuspendLayout();
@@ -239,6 +244,7 @@ namespace AliceToolsGui
             this.TabControlMain.Controls.Add(this.TabPageAin);
             this.TabControlMain.Controls.Add(this.TabPageEx);
             this.TabControlMain.Controls.Add(this.TabPageAr);
+            this.TabControlMain.Controls.Add(this.TabPageArPack);
             this.TabControlMain.Controls.Add(this.TabPageAcx);
             this.TabControlMain.Location = new System.Drawing.Point(9, 91);
             this.TabControlMain.Name = "TabControlMain";
@@ -271,7 +277,7 @@ namespace AliceToolsGui
             this.groupBox1.Controls.Add(this.RadioButtonAinUpdateCode);
             this.groupBox1.Location = new System.Drawing.Point(6, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(611, 99);
+            this.groupBox1.Size = new System.Drawing.Size(611, 84);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "修改";
@@ -279,7 +285,7 @@ namespace AliceToolsGui
             // RadioButtonAinAppendCode
             // 
             this.RadioButtonAinAppendCode.AutoSize = true;
-            this.RadioButtonAinAppendCode.Location = new System.Drawing.Point(15, 78);
+            this.RadioButtonAinAppendCode.Location = new System.Drawing.Point(293, 56);
             this.RadioButtonAinAppendCode.Name = "RadioButtonAinAppendCode";
             this.RadioButtonAinAppendCode.Size = new System.Drawing.Size(71, 16);
             this.RadioButtonAinAppendCode.TabIndex = 6;
@@ -425,7 +431,7 @@ namespace AliceToolsGui
             this.groupBox6.Controls.Add(this.ButtonExBuild);
             this.groupBox6.Location = new System.Drawing.Point(4, 90);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(468, 86);
+            this.groupBox6.Size = new System.Drawing.Size(610, 76);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "源文件";
@@ -448,7 +454,7 @@ namespace AliceToolsGui
             this.PathExSource.Filter = "ex源码表 (*.mx)|*.mx|ex源码 (*.x)|*.x|所有文件 (*.*)|*.*";
             this.PathExSource.Location = new System.Drawing.Point(6, 22);
             this.PathExSource.Name = "PathExSource";
-            this.PathExSource.Size = new System.Drawing.Size(373, 21);
+            this.PathExSource.Size = new System.Drawing.Size(515, 21);
             this.PathExSource.TabIndex = 5;
             this.PathExSource.PathChanged += new System.EventHandler<string>(this.PathExSource_PathChanged);
             // 
@@ -456,7 +462,7 @@ namespace AliceToolsGui
             // 
             this.ButtonExBuild.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonExBuild.Enabled = false;
-            this.ButtonExBuild.Location = new System.Drawing.Point(385, 21);
+            this.ButtonExBuild.Location = new System.Drawing.Point(527, 21);
             this.ButtonExBuild.Name = "ButtonExBuild";
             this.ButtonExBuild.Size = new System.Drawing.Size(77, 23);
             this.ButtonExBuild.TabIndex = 4;
@@ -473,7 +479,7 @@ namespace AliceToolsGui
             this.groupBox5.Controls.Add(this.ButtonExDump);
             this.groupBox5.Location = new System.Drawing.Point(4, 7);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(468, 77);
+            this.groupBox5.Size = new System.Drawing.Size(616, 77);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ex文件";
@@ -498,7 +504,7 @@ namespace AliceToolsGui
             this.PathBoxEx.Filter = "Ex文件 (*.ex)|*.ex";
             this.PathBoxEx.Location = new System.Drawing.Point(6, 22);
             this.PathBoxEx.Name = "PathBoxEx";
-            this.PathBoxEx.Size = new System.Drawing.Size(373, 21);
+            this.PathBoxEx.Size = new System.Drawing.Size(521, 21);
             this.PathBoxEx.TabIndex = 5;
             this.PathBoxEx.PathChanged += new System.EventHandler<string>(this.PathBoxEx_PathChanged);
             // 
@@ -506,7 +512,7 @@ namespace AliceToolsGui
             // 
             this.ButtonExDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonExDump.Enabled = false;
-            this.ButtonExDump.Location = new System.Drawing.Point(385, 21);
+            this.ButtonExDump.Location = new System.Drawing.Point(533, 21);
             this.ButtonExDump.Name = "ButtonExDump";
             this.ButtonExDump.Size = new System.Drawing.Size(77, 23);
             this.ButtonExDump.TabIndex = 4;
@@ -534,7 +540,7 @@ namespace AliceToolsGui
             // CheckBoxArImg
             // 
             this.CheckBoxArImg.AutoSize = true;
-            this.CheckBoxArImg.Location = new System.Drawing.Point(184, 112);
+            this.CheckBoxArImg.Location = new System.Drawing.Point(169, 112);
             this.CheckBoxArImg.Name = "CheckBoxArImg";
             this.CheckBoxArImg.Size = new System.Drawing.Size(84, 16);
             this.CheckBoxArImg.TabIndex = 15;
@@ -544,11 +550,11 @@ namespace AliceToolsGui
             // CheckBoxArForce
             // 
             this.CheckBoxArForce.AutoSize = true;
-            this.CheckBoxArForce.Location = new System.Drawing.Point(329, 112);
+            this.CheckBoxArForce.Location = new System.Drawing.Point(266, 112);
             this.CheckBoxArForce.Name = "CheckBoxArForce";
-            this.CheckBoxArForce.Size = new System.Drawing.Size(132, 16);
+            this.CheckBoxArForce.Size = new System.Drawing.Size(108, 16);
             this.CheckBoxArForce.TabIndex = 14;
-            this.CheckBoxArForce.Text = "强制覆盖已有的文件";
+            this.CheckBoxArForce.Text = "覆盖已有的文件";
             this.CheckBoxArForce.UseVisualStyleBackColor = true;
             // 
             // CheckBoxArRaw
@@ -564,7 +570,7 @@ namespace AliceToolsGui
             // ButtonArExtract
             // 
             this.ButtonArExtract.Enabled = false;
-            this.ButtonArExtract.Location = new System.Drawing.Point(354, 70);
+            this.ButtonArExtract.Location = new System.Drawing.Point(507, 70);
             this.ButtonArExtract.Name = "ButtonArExtract";
             this.ButtonArExtract.Size = new System.Drawing.Size(113, 29);
             this.ButtonArExtract.TabIndex = 10;
@@ -575,7 +581,7 @@ namespace AliceToolsGui
             // ButtonArList
             // 
             this.ButtonArList.Enabled = false;
-            this.ButtonArList.Location = new System.Drawing.Point(184, 70);
+            this.ButtonArList.Location = new System.Drawing.Point(384, 70);
             this.ButtonArList.Name = "ButtonArList";
             this.ButtonArList.Size = new System.Drawing.Size(113, 29);
             this.ButtonArList.TabIndex = 9;
@@ -601,7 +607,7 @@ namespace AliceToolsGui
             this.groupBox4.Controls.Add(this.PathBoxAr);
             this.groupBox4.Location = new System.Drawing.Point(6, 8);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(461, 55);
+            this.groupBox4.Size = new System.Drawing.Size(614, 55);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "afa/ald文件路径";
@@ -614,7 +620,7 @@ namespace AliceToolsGui
             this.PathBoxAr.Filter = "档案文件 (*.ald;*.afa)|*.ald;*.afa";
             this.PathBoxAr.Location = new System.Drawing.Point(6, 20);
             this.PathBoxAr.Name = "PathBoxAr";
-            this.PathBoxAr.Size = new System.Drawing.Size(449, 21);
+            this.PathBoxAr.Size = new System.Drawing.Size(602, 21);
             this.PathBoxAr.TabIndex = 1;
             this.PathBoxAr.PathChanged += new System.EventHandler<string>(this.PathBoxAr_PathChanged);
             // 
@@ -628,9 +634,59 @@ namespace AliceToolsGui
             this.ListBoxArItems.Location = new System.Drawing.Point(7, 143);
             this.ListBoxArItems.Name = "ListBoxArItems";
             this.ListBoxArItems.ScrollAlwaysVisible = true;
-            this.ListBoxArItems.Size = new System.Drawing.Size(460, 124);
+            this.ListBoxArItems.Size = new System.Drawing.Size(607, 124);
             this.ListBoxArItems.TabIndex = 0;
             this.ListBoxArItems.SelectedIndexChanged += new System.EventHandler(this.ListBoxArItems_SelectedIndexChanged);
+            // 
+            // TabPageArPack
+            // 
+            this.TabPageArPack.Controls.Add(this.textBox1);
+            this.TabPageArPack.Controls.Add(this.ButtonArPack);
+            this.TabPageArPack.Controls.Add(this.PathBoxArPack);
+            this.TabPageArPack.Location = new System.Drawing.Point(4, 22);
+            this.TabPageArPack.Name = "TabPageArPack";
+            this.TabPageArPack.Size = new System.Drawing.Size(623, 274);
+            this.TabPageArPack.TabIndex = 4;
+            this.TabPageArPack.Text = "Afa打包";
+            this.TabPageArPack.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(19, 54);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(594, 204);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // ButtonArPack
+            // 
+            this.ButtonArPack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonArPack.Enabled = false;
+            this.ButtonArPack.Location = new System.Drawing.Point(538, 16);
+            this.ButtonArPack.Name = "ButtonArPack";
+            this.ButtonArPack.Size = new System.Drawing.Size(75, 23);
+            this.ButtonArPack.TabIndex = 1;
+            this.ButtonArPack.Text = "打包";
+            this.ButtonArPack.UseVisualStyleBackColor = true;
+            this.ButtonArPack.Click += new System.EventHandler(this.ButtonArPack_Click);
+            // 
+            // PathBoxArPack
+            // 
+            this.PathBoxArPack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PathBoxArPack.AutoScroll = true;
+            this.PathBoxArPack.Filter = "所有文件 (*.*)|*.*";
+            this.PathBoxArPack.Location = new System.Drawing.Point(19, 17);
+            this.PathBoxArPack.Name = "PathBoxArPack";
+            this.PathBoxArPack.Size = new System.Drawing.Size(513, 21);
+            this.PathBoxArPack.TabIndex = 0;
+            this.PathBoxArPack.PathChanged += new System.EventHandler<string>(this.PathBoxArPack_PathChanged);
             // 
             // TabPageAcx
             // 
@@ -665,7 +721,7 @@ namespace AliceToolsGui
             this.groupBox3.Controls.Add(this.RadioButtonAcx2Csv);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(463, 86);
+            this.groupBox3.Size = new System.Drawing.Size(611, 86);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "转换";
@@ -678,7 +734,7 @@ namespace AliceToolsGui
             this.PathBoxAcxCSV.Filter = "ACX/CSV文件 (*.acx;*.csv)|*.acx;*.csv";
             this.PathBoxAcxCSV.Location = new System.Drawing.Point(6, 22);
             this.PathBoxAcxCSV.Name = "PathBoxAcxCSV";
-            this.PathBoxAcxCSV.Size = new System.Drawing.Size(451, 21);
+            this.PathBoxAcxCSV.Size = new System.Drawing.Size(599, 21);
             this.PathBoxAcxCSV.TabIndex = 5;
             this.PathBoxAcxCSV.PathChanged += new System.EventHandler<string>(this.PathBoxAcxCSV_PathChanged);
             // 
@@ -686,7 +742,7 @@ namespace AliceToolsGui
             // 
             this.ButtonAcxConvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAcxConvert.Enabled = false;
-            this.ButtonAcxConvert.Location = new System.Drawing.Point(310, 53);
+            this.ButtonAcxConvert.Location = new System.Drawing.Point(458, 53);
             this.ButtonAcxConvert.Name = "ButtonAcxConvert";
             this.ButtonAcxConvert.Size = new System.Drawing.Size(147, 23);
             this.ButtonAcxConvert.TabIndex = 4;
@@ -799,11 +855,12 @@ namespace AliceToolsGui
             // 
             // ButtonShutdown
             // 
-            this.ButtonShutdown.Location = new System.Drawing.Point(397, 409);
+            this.ButtonShutdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonShutdown.Location = new System.Drawing.Point(551, 407);
             this.ButtonShutdown.Name = "ButtonShutdown";
             this.ButtonShutdown.Size = new System.Drawing.Size(62, 33);
             this.ButtonShutdown.TabIndex = 9;
-            this.ButtonShutdown.Text = "取消提取";
+            this.ButtonShutdown.Text = "取消操作";
             this.ButtonShutdown.UseVisualStyleBackColor = true;
             this.ButtonShutdown.Visible = false;
             this.ButtonShutdown.Click += new System.EventHandler(this.ButtonShutdown_Click);
@@ -842,6 +899,8 @@ namespace AliceToolsGui
             this.TabPageAr.ResumeLayout(false);
             this.TabPageAr.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.TabPageArPack.ResumeLayout(false);
+            this.TabPageArPack.PerformLayout();
             this.TabPageAcx.ResumeLayout(false);
             this.TabPageAcx.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -918,6 +977,10 @@ namespace AliceToolsGui
         private System.Windows.Forms.LinkLabel LinkLabelATG;
         private System.Windows.Forms.Button ButtonShutdown;
         private System.Windows.Forms.CheckBox CheckBoxExSplite;
+        private System.Windows.Forms.TabPage TabPageArPack;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button ButtonArPack;
+        private CustomControls.PathBox PathBoxArPack;
     }
 }
 
