@@ -3,9 +3,9 @@ The GUI Client for alice-tools.
 
 用于 [alice-tools](https://github.com/nunuhara/alice-tools) 的 GUI 客户端。
 
-最新版：[1.0.4](https://github.com/differentrain/AliceToolsGui/releases/download/1.0.4/AliceToolsGui1.0.4.zip)
+最新版：[1.0.5](https://github.com/differentrain/AliceToolsGui/releases/download/1.0.5/AliceToolsGui1.0.5.zip)
 
-**注：`1.0.2` 之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
+**注：`1.0.5` 之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
 
 ## 使用说明
 
