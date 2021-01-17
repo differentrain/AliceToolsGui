@@ -20,13 +20,14 @@ namespace AliceToolsGui
         static void Main()
         {
             string[] args = Environment.GetCommandLineArgs();
-            if (args.Length == 3)
+            if (args.Length == 4 && int.TryParse(args[3], out int pid))
             {
-                Thread.Sleep(1000);
+                TryKillProcess(pid);
+
                 if (args[1] == "update")
                 {
                     File.Copy(args[0], args[2], true);
-                    var si = new ProcessStartInfo(args[2], $"delete \"{args[0]}\"")
+                    var si = new ProcessStartInfo(args[2], $"delete \"{args[0]}\" {GetThisPID()}")
                     {
                         UseShellExecute = false
                     };
@@ -51,6 +52,34 @@ namespace AliceToolsGui
                 {
                     Environment.Exit(0);
                 }
+            }
+        }
+
+        public static int GetThisPID()
+        {
+            using (var proc = Process.GetCurrentProcess())
+            {
+                return proc.Id;
+            }
+        }
+
+        private static void TryKillProcess(int pid)
+        {
+            Process proc = null;
+            try
+            {
+                proc = Process.GetProcessById(pid);
+                if (!proc.HasExited)
+                {
+                    proc.Kill();
+                }
+            }
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch { }
+#pragma warning restore CA1031 // Do not catch general exception types
+            finally
+            {
+                proc?.Dispose();
             }
         }
     }

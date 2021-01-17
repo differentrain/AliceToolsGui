@@ -143,8 +143,7 @@ namespace AliceToolsGui
                 await Task.Delay(3000).ConfigureAwait(false);
 
                 FileInfo fi = fis.First(f => f.Extension.ToLower().Equals(".exe"));
-
-                var si = new ProcessStartInfo(Environment.GetCommandLineArgs()[0], $"update \"{Environment.GetCommandLineArgs()[0]}\"")
+                var si = new ProcessStartInfo(fi.FullName, $"update \"{Environment.GetCommandLineArgs()[0]}\" {Program.GetThisPID()}")
                 {
                     UseShellExecute = false
                 };
@@ -154,17 +153,11 @@ namespace AliceToolsGui
 #pragma warning disable CA1031 // Do not catch general exception types
             catch
             {
-
                 Invoke(() => TextBoxOutput.Text += $"更新失败，请重启程序再试。\r\n");
             }
 #pragma warning restore CA1031 // Do not catch general exception types
-            finally
-            {
-                ClearTemp();
-            }
-
-
         }
+
 
         private async Task<IEnumerable<FileInfo>> GetUpdateTempFilesAsync(GithubReleaseClient client, Version version)
         {
