@@ -67,6 +67,7 @@
     <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsAinSourceType.cs" />
     <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsArExtractOptions.cs" />
     <Compile Include="AliceToolsProxies\BasicMembers\AliceToolsEnumArgumentAttribute.cs" />
+    <Compile Include="AliceToolsProxies\InternalMembers\ProcessOutputReaderInner.cs" />
     <Compile Include="AliceToolsProxies\Operations\AliceToolsAinDump.cs" />
     <Compile Include="AliceToolsProxies\Operations\AliceToolsAinEdit.cs" />
     <Compile Include="AliceToolsProxies\Operations\AliceToolsArExtract.cs" />

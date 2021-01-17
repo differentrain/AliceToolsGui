@@ -61,7 +61,7 @@ namespace AliceToolsGui
 
             if (SaveFileDialogMain.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                TextBoxOutput.Text += tips;
+                TextBoxOutput.Text = tips;
                 _acxDump.OutputPath = _acxBuild.OutputPath = SaveFileDialogMain.FileName;
 
                 ProcessAliceFile(op);

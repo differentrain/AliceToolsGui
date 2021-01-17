@@ -32,7 +32,7 @@ namespace AliceToolsGui
                 ButtonCheckATG.Enabled = false;
                 GroupBoxEncoding.Enabled = false;
                 TabControlMain.Enabled = false;
-
+                TextBoxOutput.Text = string.Empty;
                 BackgroundWorkerMain.RunWorkerAsync(new Action(() =>
                 {
                     UpdateAliceToolsAsync().Wait();
@@ -55,7 +55,7 @@ namespace AliceToolsGui
                 ButtonCheckAT.Enabled = false;
                 GroupBoxEncoding.Enabled = false;
                 TabControlMain.Enabled = false;
-
+                TextBoxOutput.Text = string.Empty;
                 BackgroundWorkerMain.RunWorkerAsync(new Action(() =>
                 {
                     UpdateAliceToolsGuiAsync().Wait();

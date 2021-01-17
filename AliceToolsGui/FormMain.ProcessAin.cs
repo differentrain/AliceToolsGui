@@ -53,9 +53,11 @@ namespace AliceToolsGui
                 default:
                     break;
             }
+        }
 
-
-
+        private void CheckBoxAinTranscode_CheckedChanged(object sender, EventArgs e)
+        {
+            EncodingPanleAinTranscode.Enabled = CheckBoxAinTranscode.Checked;
         }
 
         private void RadioButtonAinUpdateCode_CheckedChanged(object sender, EventArgs e)
@@ -117,7 +119,7 @@ namespace AliceToolsGui
 
             if (SaveFileDialogMain.ShowDialog() == DialogResult.OK)
             {
-                TextBoxOutput.Text += "开始提取Ain文件...";
+                TextBoxOutput.Text = "开始提取Ain文件...";
                 _ainDump.InputPath = PathBoxInputAin.Path;
                 _ainDump.Output = SaveFileDialogMain.FileName;
                 ProcessAliceFile(_ainDump);
@@ -129,7 +131,7 @@ namespace AliceToolsGui
             SaveFileDialogMain.Filter = "Ain文件 (*.ain)|*.ain";
             if (SaveFileDialogMain.ShowDialog() == DialogResult.OK)
             {
-                TextBoxOutput.Text += "开始建立新的AIN文件...";
+                TextBoxOutput.Text = "开始建立新的AIN文件...";
                 _ainEdit.InputPath = PathBoxInputAin.Path;
                 _ainEdit.Source = PathBoxAinSource.Path;
                 _ainEdit.OutputPath = SaveFileDialogMain.FileName;
@@ -149,6 +151,16 @@ namespace AliceToolsGui
                 {
                     _ainEdit.SourceType = AliceToolsAinSourceType.UpdatesText;
                 }
+
+                if (CheckBoxAinTranscode.Checked)
+                {
+                    _ainEdit.TransCode = EncodingPanleAinTranscode.Encoding;
+                }
+                else
+                {
+                    _ainEdit.TransCode = null;
+                }
+
                 ProcessAliceFile(_ainEdit);
             }
         }

@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 using AliceToolsGui.AliceToolsProxies;
@@ -15,6 +17,7 @@ namespace AliceToolsGui
         {
             ListBoxArItems.Items.Clear();
             ButtonArExtract.Enabled = false;
+            ButtonArSaveList.Enabled = false;
             if (string.IsNullOrWhiteSpace(PathBoxAr.Path))
             {
                 ButtonArExtractAll.Enabled = ButtonArList.Enabled = false;
@@ -26,12 +29,12 @@ namespace AliceToolsGui
 
         private void PathBoxArPackPathChangedCore()
         {
-            ButtonArPack.Enabled= !string.IsNullOrWhiteSpace(PathBoxArPack.Path);
+            ButtonArPack.Enabled = !string.IsNullOrWhiteSpace(PathBoxArPack.Path);
         }
 
         private void ButtonArPack_Click(object sender, EventArgs e)
         {
-            TextBoxOutput.Text += $"准备打包清单...\r\n";
+            TextBoxOutput.Text = $"开始打包清单文件...\r\n";
             _arPack.InputPath = PathBoxArPack.Path;
             ButtonShutdown.Visible = true;
             ProcessAliceFile(_arPack);
@@ -52,7 +55,7 @@ namespace AliceToolsGui
             if (FolderBrowserDialogMain.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 _arExtract.InputPath = PathBoxAr.Path;
-                TextBoxOutput.Text += $"开始提取所有文件...\r\n";
+                TextBoxOutput.Text = $"开始提取所有文件...\r\n";
                 _arExtract.TargetItem = null;
                 _arExtract.Options = AliceToolsArExtractOptions.Default;
                 if (CheckBoxArForce.Checked)
@@ -72,9 +75,45 @@ namespace AliceToolsGui
                 ButtonShutdown.Visible = true;
                 ProcessAliceFile(_arExtract);
             }
-
-
         }
+
+        private void ButtonArSaveList_Click(object sender, EventArgs e)
+        {
+            SaveFileDialogMain.Filter = "所有文件 (*.*)|*.*";
+
+            if (SaveFileDialogMain.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                GroupBoxUpdate.Enabled = false;
+                GroupBoxEncoding.Enabled = false;
+                TabControlMain.Enabled = false;
+                TextBoxOutput.Text = $"正在保存列表文件...\r\n";
+
+                BackgroundWorkerMain.RunWorkerAsync(new Action(() =>
+                {
+                    StreamWriter sw = null;
+                    try
+                    {
+                        sw = new StreamWriter(File.Create(SaveFileDialogMain.FileName));
+                        foreach (AliceArchiveItem item in ListBoxArItems.Items)
+                        {
+                            sw.WriteLine(item.ToString());
+                        }
+                        Invoke(() => TextBoxOutput.Text += "列表保存完成。\r\n");
+                    }
+#pragma warning disable CA1031 // Do not catch general exception types
+                    catch
+                    {
+                        Invoke(() => TextBoxOutput.Text += "列表保存失败。\r\n");
+                    }
+                    finally
+                    {
+                        sw?.Dispose();
+                    }
+#pragma warning restore CA1031 // Do not catch general exception types
+                }));
+            }
+        }
+
 
         private void ButtonArExtract_Click(object sender, EventArgs e)
         {
@@ -85,7 +124,7 @@ namespace AliceToolsGui
             if (SaveFileDialogMain.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 _arExtract.InputPath = PathBoxAr.Path;
-                TextBoxOutput.Text += $"开始提取 {_arExtract.TargetItem.FileName} ...\r\n";
+                TextBoxOutput.Text = $"开始提取 {_arExtract.TargetItem.FileName} ...\r\n";
                 _arExtract.OutputPath = SaveFileDialogMain.FileName;
                 ProcessAliceFile(_arExtract);
             }
@@ -98,7 +137,9 @@ namespace AliceToolsGui
             TabControlMain.Enabled = false;
             _arList.InputPath = PathBoxAr.Path;
             ListBoxArItems.Items.Clear();
-            TextBoxOutput.Text += $"开始加载文件列表...\r\n";
+            ButtonArExtract.Enabled = false;
+            ButtonArSaveList.Enabled = false;
+            TextBoxOutput.Text = $"开始加载文件列表...\r\n";
             BackgroundWorkerMain.RunWorkerAsync(new Action(() =>
             {
                 GetArList().Wait();
@@ -149,8 +190,7 @@ namespace AliceToolsGui
                 Invoke(() => TextBoxOutput.Text += "错误：发生了内部错误。\r\n");
             }
 #pragma warning restore CA1031 // Do not catch general exception types
-
-
+            Invoke(() => ButtonArSaveList.Enabled = ListBoxArItems.Items.Count > 0);
         }
 
     }

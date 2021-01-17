@@ -95,7 +95,7 @@ namespace AliceToolsGui.CustomControls
             this.ComboBoxCustom.FormattingEnabled = true;
             this.ComboBoxCustom.Location = new System.Drawing.Point(188, 3);
             this.ComboBoxCustom.Name = "ComboBoxCustom";
-            this.ComboBoxCustom.Size = new System.Drawing.Size(148, 20);
+            this.ComboBoxCustom.Size = new System.Drawing.Size(139, 20);
             this.ComboBoxCustom.TabIndex = 5;
             this.ComboBoxCustom.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCustom_SelectedIndexChanged);
             // 
@@ -110,7 +110,7 @@ namespace AliceToolsGui.CustomControls
             this.Controls.Add(this.RadioButtonJP);
             this.Controls.Add(this.RadioButtonCHS);
             this.Name = "EncodingPanle";
-            this.Size = new System.Drawing.Size(342, 26);
+            this.Size = new System.Drawing.Size(333, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 

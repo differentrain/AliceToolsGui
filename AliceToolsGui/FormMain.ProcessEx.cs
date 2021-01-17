@@ -57,7 +57,7 @@ namespace AliceToolsGui
             if (isInvoke)
             {
                 _exDump.InputPath = PathBoxEx.Path;
-                TextBoxOutput.Text += $"开始提取Ex文件...";
+                TextBoxOutput.Text = $"开始提取Ex文件...";
                 ProcessAliceFile(_exDump);
             }
         }
@@ -67,7 +67,7 @@ namespace AliceToolsGui
             SaveFileDialogMain.Filter = "Ex文件 (*.ex)|*.ex";
             if (SaveFileDialogMain.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                TextBoxOutput.Text += "开始生成Ex文件...";
+                TextBoxOutput.Text = "开始生成Ex文件...";
                 _exBuild.InputPath = PathExSource.Path;
                 _exBuild.OutputPath = SaveFileDialogMain.FileName;
                 _exBuild.IsOldGame = CheckBoxExOld.Checked;

@@ -20,7 +20,7 @@ namespace AliceToolsGui.AliceToolsProxies
         public static readonly AliceArchiveItemConverter Default = new AliceArchiveItemConverter();
 
         private static readonly Regex s_reg = new Regex(
-            @"(^\d+)(?:\s*:\s*)(\S+)(?=\s*^)",
+            @"(^\d+)(?:\s*:\s*)(\S+)(?=\s*)",
             RegexOptions.Multiline | RegexOptions.Compiled);
 
         private AliceArchiveItemConverter() { }

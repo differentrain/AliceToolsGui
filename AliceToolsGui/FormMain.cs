@@ -130,7 +130,6 @@ namespace AliceToolsGui
                 SaveFileDialogMain.FileName = string.Empty;
                 ButtonCheckAT.Text = ButtonCheckATG.Text = "更新";
                 ButtonShutdown.Visible = false;
-                TextBoxOutput.Text += "******************\r\n";
                 ButtonCheckAT.Enabled = true;
                 ButtonCheckATG.Enabled = true;
                 ClearTemp();
@@ -245,15 +244,14 @@ namespace AliceToolsGui
                         Invoke(() => TextBoxOutput.Text += "错误：无法启动alice-tools.\r\n");
                         break;
                     default:
-                        Invoke(() => TextBoxOutput.Text += "错误：意外的错误，请联系PU树脂哈尼。\r\n");
+                        Invoke(() => TextBoxOutput.Text += "任务被取消，或发生了内部错误。\r\n");
                         break;
                 }
-
             }
 #pragma warning disable CA1031 // Do not catch general exception types
             catch
             {
-                Invoke(() => TextBoxOutput.Text += "任务被取消，或发生了内部错误。\r\n");
+                Invoke(() => TextBoxOutput.Text += "错误：意外的错误，请联系PU树脂哈尼。\r\n");
             }
 #pragma warning restore CA1031 // Do not catch general exception types
 
@@ -270,7 +268,6 @@ namespace AliceToolsGui
             ButtonShutdown.Visible = false;
             _proxy.Shutdown();
         }
-
 
     }
 }

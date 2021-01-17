@@ -146,19 +146,9 @@ namespace AliceToolsGui.AliceToolsProxies
         /// <summary>
         /// Shutdown alice-tools process invoked by this instance.
         /// </summary>
-        public void Shutdown()
-        {
+        public void Shutdown() => _processReader?.ShutDown();
 
-            try
-            {
-                _runingProcess.Kill();
-            }
-#pragma warning disable CA1031 // Do not catch general exception types
-            catch { }
-#pragma warning restore CA1031 // Do not catch general exception types
-            _runingProcess.Dispose();
 
-        }
 
 
         private async Task<AliceToolsOutput> InvokeCoreAsync(IAliceToolsOperation operation, ProcessStartInfo startInfo)
@@ -167,49 +157,21 @@ namespace AliceToolsGui.AliceToolsProxies
             return await ProcessRunAsync(startInfo).ConfigureAwait(false);
         }
 
-        private Process _runingProcess;
+        private ProcessOutputReaderInner _processReader;
 
         private async Task<AliceToolsOutput> ProcessRunAsync(ProcessStartInfo startInfo)
         {
-            var process = new Process { StartInfo = startInfo };
-            _runingProcess = process;
+            var reader = new ProcessOutputReaderInner(startInfo);
+            _processReader = reader;
             try
             {
-                //not start
-                if (!process.Start())
-                {
-                    return await CreateOutputMessageAsync(AliceToolsState.NotRunning, null, "alice-tools have not run.").ConfigureAwait(false);
-                }
-                string output = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
-                //not exit
-                if (!process.HasExited)
-                {
-                    process.Kill();
-                    return await CreateOutputMessageAsync(AliceToolsState.UnknowException, null, "Unknow exception.").ConfigureAwait(false);
-                }
-                //has output message.
-                if (!string.IsNullOrEmpty(output))
-                {
-                    if (process.ExitCode != 0)
-                    {
-                        return await CreateErrorAsync(process, AliceToolsState.PartlySuccessful, output).ConfigureAwait(false);
-                    }
-                    return await CreateOutputMessageAsync(AliceToolsState.Successful, output).ConfigureAwait(false);
-                }
-                //has no output.
-                if (process.ExitCode == 0)
-                {
-                    return await CreateOutputMessageAsync(AliceToolsState.Successful, string.Empty).ConfigureAwait(false);
-                }
-                //error output
-                return await CreateErrorAsync(process, AliceToolsState.Fail).ConfigureAwait(false);
+                return await reader.ReadAsync().ConfigureAwait(false);
             }
             finally
             {
-                process.Dispose();
+                _processReader = null;
             }
         }
-
 
         #region static members
 
@@ -242,15 +204,6 @@ namespace AliceToolsGui.AliceToolsProxies
 
         #region private static members
 
-        private static async Task<AliceToolsOutput> CreateOutputMessageAsync(AliceToolsState state, string msg = null, string error = null) =>
-                         await Task.FromResult(new AliceToolsOutput(state, msg, error)).ConfigureAwait(false);
-
-        private static async Task<AliceToolsOutput> CreateErrorAsync(Process process, AliceToolsState state, string msg = null)
-        {
-            string error = await process.StandardError.ReadToEndAsync().ConfigureAwait(false);
-            return await CreateOutputMessageAsync(state, msg, error).ConfigureAwait(false);
-        }
-
         private static ProcessStartInfo EnsureAndCreateStartInfo(string aliceToolsPath)
         {
             if (string.IsNullOrWhiteSpace(aliceToolsPath))
@@ -266,7 +219,7 @@ namespace AliceToolsGui.AliceToolsProxies
             {
                 RedirectStandardError = true,
                 RedirectStandardOutput = true,
-                StandardErrorEncoding = default,
+                StandardErrorEncoding = outputEncoding,
                 StandardOutputEncoding = outputEncoding,
                 UseShellExecute = false,
                 CreateNoWindow = true

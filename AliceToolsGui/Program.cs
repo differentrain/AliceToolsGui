@@ -7,9 +7,11 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
+using AliceToolsGui.AliceToolsProxies.InternalMembers;
+
 namespace AliceToolsGui
 {
-    static class Program
+     static class Program
     {
 
 

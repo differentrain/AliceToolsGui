@@ -20,7 +20,9 @@ namespace AliceToolsGui.CustomControls
         {
             InitializeComponent();
             ComboBoxCustom.Items.AddRange(s_encodings);
-            RadioButtonJP.Tag = Encoding.GetEncoding(932);
+            ComboBoxCustom.SelectedIndex = 0;
+            Encoding = Encoding.GetEncoding(932);
+            RadioButtonJP.Tag = Encoding;
             RadioButtonCHS.Tag = Encoding.GetEncoding(936);
             RadioButtonUTF8.Tag = Encoding.UTF8;
             RadioButtonJP.Checked = true;
@@ -28,12 +30,16 @@ namespace AliceToolsGui.CustomControls
 
         public event EventHandler<Encoding> EncodingChanged;
 
+        public Encoding Encoding { get; private set; }
+
+
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             var rb = sender as RadioButton;
             if (rb.Checked)
             {
-                EncodingChanged?.Invoke(this, rb.Tag as Encoding);
+                Encoding = rb.Tag as Encoding;
+                EncodingChanged?.Invoke(this, Encoding);
             }
         }
 
@@ -49,7 +55,8 @@ namespace AliceToolsGui.CustomControls
         {
             if (RadioButtonCustom.Checked && ComboBoxCustom.SelectedIndex >= 0)
             {
-                EncodingChanged?.Invoke(this, (ComboBoxCustom.SelectedItem as LibiconvFriendlyEncoding).Encoding);
+                Encoding = (ComboBoxCustom.SelectedItem as LibiconvFriendlyEncoding).Encoding;
+                EncodingChanged?.Invoke(this, Encoding);
             }
         }
 
