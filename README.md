@@ -39,4 +39,4 @@ The GUI Client for alice-tools.
 
 然后文件整体是不支持空格的，当然路径中有空格是可以，但其他位置出现空格会导致解析问题。
 
-最后，[alice-tools](https://github.com/nunuhara/alice-tools) 对于清单文件的解析是以行为单位的，也就是说只认`CRLF`，最后一行的后面也得按一次回车，不然还是报错。
+最后，[alice-tools](https://github.com/nunuhara/alice-tools) 对于清单文件的解析是以且只以`CRLF`为标识，**也就是说，最后一行的结尾也要按一次回车**，否则还是报错。
