@@ -25,8 +25,18 @@ The GUI Client for alice-tools.
 
 ## 注意事项
 
+### 通用
+
 使用 [alice-tools](https://github.com/nunuhara/alice-tools)，编码很重要。
 
 遇到问题，90%都是输入/输出的编码选择不对，多切换试试就好了。
 
-另外 [alice-tools](https://github.com/nunuhara/alice-tools) 目前对于中文路径的支持很差，最好使用英文路径。
+另外 [alice-tools](https://github.com/nunuhara/alice-tools) 目前不支持中文路径，应该使用英文(ASCII)路径。
+
+### 打包档案用的清单文件
+
+首先文件编码要搞好，与设置的输入选项相一致。注意不要带BOM头，也就是说windows自带的记事本是不推荐的。
+
+然后文件整体是不支持空格的，当然路径中有空格是可以，但其他位置出现空格会导致解析问题。
+
+最后，[alice-tools](https://github.com/nunuhara/alice-tools) 对于清单文件的解析是以行为单位的，也就是说只认`CRLF`，最后一行的后面也得按一次回车，不然还是报错。
