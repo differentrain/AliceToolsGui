@@ -5,7 +5,9 @@ The GUI Client for alice-tools.
 
 最新版：[1.1.0](https://github.com/differentrain/AliceToolsGui/releases/download/1.1.0/AliceToolsGui1.1.0.zip)
 
-**注：`1.0.5` 之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
+**注1：`1.0.5` 之前的版本有自动更新的BUG，本体无法自动更新，需要手动下载。**
+
+**注2： 目前不支持 `alice-tools 0.91` 之后的版本，需要手动下载。**
 
 ## 使用说明
 
